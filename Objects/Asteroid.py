@@ -3,7 +3,7 @@ import random
 
 class Asteroid(RoomObject):
     """
-    A class for Zorks danerous obstacles
+    A class for Zorks dangerous obstacles
     """
     
     def __init__(self, room, x, y):
