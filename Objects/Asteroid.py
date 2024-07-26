@@ -3,7 +3,7 @@ import random
 
 class Asteroid(RoomObject):
     """
-    A class for Zorks dangerous obstacles
+    A class for Zorks danerous obstacles
     """
     
     def __init__(self, room, x, y):
@@ -20,6 +20,9 @@ class Asteroid(RoomObject):
         # set travel direction
         angle = random.randint(135,225)
         self.set_direction(angle, 10)
+        
+        # register events
+        self.register_collision_object("Ship")
         
     def step(self):
         """
@@ -44,4 +47,13 @@ class Asteroid(RoomObject):
         removes asteroid that have exited the room
         """
         if self.x + self.width < 0:
+            print("asteroid deleted")
             self.room.delete_object(self)
+            
+    def handle_collision(self, other, other_type):
+        """
+        Handles the collision events for the Asteroid
+        """
+        
+        if other_type == "Ship":
+            self.room.running = False

@@ -23,7 +23,20 @@ class Zork(RoomObject):
         # start asteroid timer
         asteroid_spawn_time = random.randint(15,150)
         self.set_timer(asteroid_spawn_time, self.spawn_asteroid)
-   
+        
+    def keep_in_room(self):
+        """
+        Keeps the Zork inside the top and bottom room limits
+        """
+        if self.y < 0 or self.y > Globals.SCREEN_HEIGHT - self.height:
+            self.y_speed *= -1
+            
+    def step(self):
+        """
+        Determine what happens to the Dragon on each tick of the game clock
+        """
+        self.keep_in_room()
+        
     def spawn_asteroid(self):
         """
         Randomly spawns a new Asteroid
