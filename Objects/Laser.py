@@ -14,7 +14,7 @@ class Laser(RoomObject):
         
         # set image
         image = self.load_image("Laser.png")
-        self.set_image(image, 33, 9)
+        self.set_image(image, 330, 330)
         
         # set movement
         self.set_direction(0, 20)
