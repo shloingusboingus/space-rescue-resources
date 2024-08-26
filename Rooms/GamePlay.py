@@ -12,7 +12,7 @@ class GamePlay(Level):
         
         # add objects
         self.add_room_object(Ship(self, 25, 50))
-        for i in range(30):
+        for i in range(50):
 
             self.add_room_object(Zork(self,1120, 50))
         

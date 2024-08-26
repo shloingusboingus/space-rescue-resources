@@ -52,7 +52,7 @@ class Zork(RoomObject):
         self.room.add_room_object(new_asteroid)
         
         # reset time for next Asteroid spawn
-        asteroid_spawn_time = random.randint(0, 0)
+        asteroid_spawn_time = random.randint(30, 30)
         self.set_timer(asteroid_spawn_time, self.spawn_asteroid)
         
     def spawn_astronaut(self):

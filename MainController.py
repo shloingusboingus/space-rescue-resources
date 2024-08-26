@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
 import sys
-import pygame
+import pygame 
 from GameFrame import Globals
 
 pygame.mixer.pre_init(44100, -16, 2, 2048)
