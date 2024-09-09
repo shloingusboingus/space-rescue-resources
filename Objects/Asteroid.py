@@ -15,7 +15,7 @@ class Asteroid(RoomObject):
         
         # set image
         image = self.load_image("asteroid.png")
-        self.set_image(image,50,49)
+        self.set_image(image,100,100)
         
         # set travel direction
         angle = random.randint(135,225)
